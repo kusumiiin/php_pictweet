@@ -14,7 +14,7 @@ class UsersController extends Controller
   public function show()
   {
     $name = Auth::user()->name;
-    $tweets = Tweet::where('user_id', Auth::user()->id)->orderBY('created_at', 'DESC')->paginate(5);
+    $tweets = Auth::user()->tweets()->orderBY('created_at', 'DESC')->paginate(5);
 
     return view('users.show')->with(array('name' => $name, 'tweets' => $tweets));
   }
