@@ -41,5 +41,21 @@ class TweetsController extends Controller
 
     return view('tweets.destroy');
   }
+  public function edit($id)
+  {
+    $tweet = Tweet::find($id);
+    return view('tweets.edit')->with('tweet', $tweet);
+  }
+  public function update($id, Request $request)
+  {
+    Tweet::find($id)->update(
+      array(
+        'text' => $request->text,
+        'image' => $request->image
+      )
+    );
+
+    return view('tweets.update');
+  }
 
 }

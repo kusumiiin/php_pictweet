@@ -22,5 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/tweets', 'TweetsController@store');
     Route::get('/users/{id}', 'UsersController@show');
     Route::get('/tweets/{id}/delete', 'TweetsController@destroy');
+    Route::get('/tweets/{tweet_id}/edit', 'TweetsController@edit');
+    Route::patch('/tweets/{tweet_id}', 'TweetsController@update');
 
 });
