@@ -57,5 +57,10 @@ class TweetsController extends Controller
 
     return view('tweets.update');
   }
+  public function show($id)
+  {
+    $tweet = Tweet::find($id)
+    return view('tweets.show')->with('tweet', $tweet);
+  }
 
 }
