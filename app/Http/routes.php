@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::group(['middleware' => ['web']], function () {
   Route::auth();
 
@@ -26,7 +24,5 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/tweets/{id}/delete', 'TweetsController@destroy');
 
   Route::resource('users', 'UsersController', ['only' => 'show']);
-
-});
 
 });

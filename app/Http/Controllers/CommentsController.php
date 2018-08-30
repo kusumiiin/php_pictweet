@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Comment;
-use Auth
+use App\tweet;
+use Auth;
 
 class CommentsController extends Controller
 {
